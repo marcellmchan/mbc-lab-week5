@@ -39,7 +39,7 @@ def preprocess_image(image: Image.Image):
 # ============================================================
 # UI
 # ============================================================
-st.title("🍎 Apple vs Orange Classifier")
+st.title("Apple vs Orange Classifier")
 st.write("Upload gambar apel atau jeruk, lalu model akan memprediksi kelasnya.")
 
 uploaded_file = st.file_uploader("Pilih gambar...", type=["jpg", "jpeg", "png"])
