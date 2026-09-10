@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import numpy as np
 from PIL import Image
@@ -6,7 +7,11 @@ import tensorflow as tf
 # ============================================================
 # KONFIGURASI
 # ============================================================
-MODEL_PATH = "model_pretrained_mobilenetv2.h5"
+# Path dibuat relatif terhadap lokasi file app.py ini sendiri,
+# supaya tetap ketemu model-nya walau Streamlit Cloud menjalankan
+# app dari root repo (bukan dari folder apple-orange/v1/).
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "model_pretrained_mobilenetv2.h5")
 IMG_SIZE = (128, 128)          # sesuai input model
 CLASS_NAMES = ["Apple", "Orange"]  # index 0 -> Apple, index 1 -> Orange
 # Catatan: urutan ini mengikuti urutan folder alfabetis (apple, orange)
