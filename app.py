@@ -74,4 +74,4 @@ else:
     st.info("Silakan upload gambar terlebih dahulu.")
 
 st.markdown("---")
-st.caption("Model transfer learning MobileNetV2. Dibuat untuk tugas Big Data LAS, Minggu 2.")
+st.caption("Model transfer learning MobileNetV2.")
