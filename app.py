@@ -12,7 +12,7 @@ CLASS_NAMES = ["Apple", "Orange"]  # index 0 -> Apple, index 1 -> Orange
 # Catatan: urutan ini mengikuti urutan folder alfabetis (apple, orange)
 # saat training. Kalau hasil prediksi kebalik, tinggal tukar urutan list ini.
 
-st.set_page_config(page_title="Apple vs Orange Classifier", page_icon="🍎🍊", layout="centered")
+st.set_page_config(page_title="Apple vs Orange Classifier", page_icon="🍎", layout="centered")
 
 st.markdown("""
 <style>
