@@ -14,6 +14,14 @@ CLASS_NAMES = ["Apple", "Orange"]  # index 0 -> Apple, index 1 -> Orange
 
 st.set_page_config(page_title="Apple vs Orange Classifier", page_icon="🍎", layout="centered")
 
+st.markdown("""
+<style>
+h1 { color: #2F4B3C; }
+.stButton>button { background: #2F4B3C; color: #FFFFFF; border: none; }
+.stButton>button:hover { background: #22362A; color: #FFFFFF; }
+</style>
+""", unsafe_allow_html=True)
+
 
 # ============================================================
 # LOAD MODEL (cache supaya tidak reload tiap interaksi)
@@ -42,7 +50,10 @@ def preprocess_image(image: Image.Image):
 st.title("Apple vs Orange Classifier")
 st.write("Upload gambar apel atau jeruk, lalu model akan memprediksi kelasnya.")
 
-uploaded_file = st.file_uploader("Pilih gambar...", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader(
+    "Pilih gambar...", type=["jpg", "jpeg", "png"],
+    help="Gunakan foto satu buah dengan latar belakang polos untuk hasil terbaik.",
+)
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
@@ -63,4 +74,4 @@ else:
     st.info("Silakan upload gambar terlebih dahulu.")
 
 st.markdown("---")
-st.caption("Model: Transfer Learning MobileNetV2 — Tugas Big Data LAS Week 2")
+st.caption("Model transfer learning MobileNetV2. Dibuat untuk tugas Big Data LAS, Minggu 2.")
